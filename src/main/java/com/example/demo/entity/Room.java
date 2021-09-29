@@ -1,15 +1,12 @@
 package com.example.demo.entity;
 
-import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
+@Table(name = "rooms")
 public class Room {
 
     @Id
@@ -17,5 +14,7 @@ public class Room {
     private Long id;
     private String name;
     private Boolean turnOn;
+    @ManyToOne
+    @JoinColumn(name = "country_id")
     private Country country;
 }

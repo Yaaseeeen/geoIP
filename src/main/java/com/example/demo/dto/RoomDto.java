@@ -9,6 +9,7 @@ import lombok.experimental.Accessors;
 public class RoomDto {
 
     private Long id;
+    private Long countryId;
     private String name;
     private Boolean turnOn;
     private Country country;
